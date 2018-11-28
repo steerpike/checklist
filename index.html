@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<html lang="en-UK">
+    <head>
+    	<meta charset="UTF-8" />
+    	<link href="assets/main.css" rel="stylesheet" type="text/css" media="all">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119252773-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-119252773-1');
+		</script>
+
+        <title>Web Development Checklist for Go-Live</title>
+    </head>
+    <body>
+        <h1>Web Development Checklist for Go-Live</h1>
+		<h2>About</h2>
+		<p>This page is designed to provide a list of questions and actions that should have been considered before launching a web site. It isn't designed to provide <em>all</em> the answers and it isn't necessarily geared towards any specific role (although there are a lot of technical tasks on the list), but if you're trying to launch a website you should at least have an <em>opinion</em> on the things listed here. Even if that opinion is, "No, that's not relevant to our particular endeavour".</p>
+		<h2>Content Dependent Questions</h2>
+		<ul>
+			<li><a href="#sitemap">Has a sitemap been generated?</a></li>
+			<li><a href="#spelling">Has the spelling for all content been checked?</a></li>
+			<li><a href="#punctuation">Is punctuation and capitalisation consistent across pages?</a></li>
+			<li><a href="#filler-text">Have we made sure there is no filler text on any of the pages?</a> </li>
+			<li><a href="#filler-img">Have we made sure there are no filler images?</a></li>
+			<li><a href="#inline">Have we made sure there no inline css or javascript?</a></li>
+			<li><a href="#validator">Is the markup and css valid? Or is the reason it's invalid acceptable?</a></li>
+			<li><a href="#print">Is there a print css file?</a></li>
+			<li><a href="#plugins">Have we tested any required plugins in a browser without plugins installed?</a></li>
+			<li><a href="#formatting">Have we made sure no content has been copied in with extra formatting?</a></li>
+			<li><a href="#charset">Is all content rendered as appropriate charset?</a></li>
+			<li><a href="#extensions">Have images been saved as appropriate extensions and quality?</a></li>
+			<li><a href="#links">Are all the links valid and go to correct locations?</a></li>
+			<li><a href="#downloads">Have we made sure any downloadable files have been uploaded to the server?</a></li>
+			<li><a href="#page404">Has a 404 page been created?</a></li>
+			<li><a href="#page500">Has a 500 page been created?</a></li>
+			<li><a href="#favicon">Has a favicon been created?</a></li>
+			<li><a href="#alt">Do all images have proper alt text atributes?</a></li>
+			<li><a href="#titles">Do all links have descriptive text and proper title attributes?</a></li>
+			<li><a href="#web-font">Does all text fall back to being rendered in a web font?</a></li>
+			<li><a href="#heading">Have we made sure there is only one level one heading on each page?</a></li>
+			<li><a href="#micro-content">Has micro-content been created for all user interaction messages?</a></li>
+			<li><a href="#minimised">Are css and javascript files minimised?</a></li>
+			<li><a href="#analytics">Have we added appropriate page analytics?</a></li>
+			<li><a href="#debugging">Have we removed any debug messages?</a></li>
+			<li><a href="#design">Does the site match the design</a></li>
+			<li><a href="#resize">Have we tested the content at expanded text size?</a></li>
+			<li><a href="#resolution">Have we tested the pages at the most common screen resolutions?</a></li>
+			<li><a href="#content-quantity">Have we varied content quantity in content panes to make sure the design fidelity is maintained?</a></li>
+			<li><a href="#validation">Have we tested javascript form validation?</a></li>
+			<li><a href="#functionality">Have we tested other javascript functionality?</a></li>
+			<li><a href="#progressive">Does the site functionality work with javascript turned off?</a></li>
+			<li><a href="#media">Confirm media plays (audio, video)</a></li>
+			<li><a href="#canonical">Utilise canonical urls where appropriate</a></li>
+			<li><a href="#responsive">Confirm responsive breakpoints and usability</a></li>
+			<li><a href="#performance">Run automated performance tests on primary pages</a></li>
+			<li><a href="#elements">Confirm all standard HTML5 elements have appropriate stylings</a></li>
+			<li><a href="#sharing">Implement social media meta tags (twitter cards, open graph) for shareable content</a></li>
+			<li><a href="#schema">Confirm appropriate entities (recipes, events, people, etc) have been marked up with associated schema.org ontologies</a></li>
+			<li><a href="#social-accounts">Confirm Client owns and publishes to associated social media accounts</a></li>
+			<li><a href="#legal">Have we created legal and privacy pages and do they contain correct content?</a></li>
+		</ul>
+		<h2>Server Dependent Questions</h2>
+		<ul>
+			<li><a href="#accounts">Do we have required account details details?</a></li>
+			<li><a href="#database">Do we have database details?</a></li>
+			<li><a href="#backup-live">Have we made a backup of the live site and the live database?</a></li>
+			<li><a href="#db-schema">Do we have a sql file for generating any databases and content?</a></li>
+			<li><a href="#hosting">Do we know the DNS and hosting provider have details for a contact for each?</a></li>
+			<li><a href="#url">Do we know the exact URL the site is to exist on?</a></li>
+			<li><a href="#cors">Have we enabled CORS if required for cross domain frontend queries?</a></li>
+			<li><a href="#monitoring">Have we enabled monitoring on application and infrastructure?</a></li>
+			<li><a href="#deployment">Do we have an automated deployment pipeline or understand the steps needed to move the application into Production?</a></li>
+			<li><a href="#rollback">Do we know how to easily and gracefully rollback to a previous depoyment?</a></li>
+			<li><a href="#migration">Do we know how to migrate the DB and any DB changes?</a></li>
+			<li><a href="#caching">Do we know what caching we need to enable?</a></li>
+			<li><a href="#rss">Have we published an RSS feed? Has it been tested in an RSS Reader?</a></li>
+			<li><a href="#updates">Do we have a plan for how we will handle future updates to plugins, modules, core frameworks or CMS?</a></li>
+			<li><a href="#ownership">Does the client have ownership of the accounts used for third party integrations and licensing? Have we confirmed
+			 we're using those accounts and associated secrets/keys in our calls?</a></li>
+			<li><a href="#privacy">Have we made sure there are no keys, secrets, API credentials, passwords, usernames or similar commited to our source control?</a></li>
+			<li><a href="#lifecycle">Have we tested user creation lifecycle? As both an Admin as a user signing up?</a></li>
+			<li><a href="#email">Have we confirmed emails are being sent by the system appropriately?</a></li>
+			<li><a href="#debug-server">Have we removed all debug messages?</a></li>
+			<li><a href="#logging">Have we set up logging of critical errors?</a></li>
+			<li><a href="#dependencies">Do we have any dependencies or classes that need to be installed on the server?</a></li>
+			<li><a href="#versions">Are we using appropriate versions of all the technology we have used?</a></li>
+			<li><a href="#external">Do we have access to any third party APIs or external dependencies that we use?</a></li>
+			<li><a href="#test-data">Have we made sure the database doesn't have any test data in it?</a></li>
+			<li><a href="#permissions">Have we set appropriate permissions on any directories that users can upload to?</a></li>
+			<li><a href="#file-security">Have we confirmed that users can't upload malicious files?</a></li>
+			<li><a href="#rename-files">Have we made sure that uploaded files are renamed to prevent overwriting?</a></li>
+			<li><a href="#gzip">Are css and javascript files gzipped?</a></li>
+			<li><a href="#server-validation">Have we tested any forms for server validation?</a></li>
+			<li><a href="#clean">Have we cleaned all data received from the user?</a></li>
+			<li><a href="#email-spam">Are we certain any mail functionality is protected from spammers?</a></li>
+			<li><a href="#spam">Have we made sure that any mails from the server are not being sent to spam folders?</a></li>
+			<li><a href="#redirects">Have we set up any appropriate 3** redirects?</a></li>
+			<li><a href="#sever-analytics">Have we set up any required server analytics?</a></li>
+			<li><a href="#robots">Has a robots.txt file been generated?</a></li>
+			<li><a href="#stress">Have we run load and stress tests?</a></li>
+			<li><a href="#slow">Have we checked the slow query log for the database?</a></li>
+			<li><a href="#private">Are private urls appropriately protected?</a></li>
+			<li><a href="#user-creation">Have any required administrators or users been created?</a></li>
+			<li><a href="#ssl">Have we purchased and installed any required SSL certificates?</a></li>
+			<li><a href="#backup">Is there a backup procedure in place?</a></li>
+			<li><a href="#restore">Have we successfully restored from backup?</a>
+				<ul>
+					<li><a href="#really">Really?</a></li>
+				</ul>
+			</li>
+		</ul>
+		
+		<h2>Content Dependent Question Details</h2>
+		
+		<h3 id="sitemap">Has a sitemap been generated?</h3>
+		<p>Google has produced excellent documentation on 
+		<a href="https://support.google.com/webmasters/answer/183668?hl=en">sitemap generation</a> 
+		which can be used to produce a sitemap that allows easy crawling 
+		for spiders as well as easy navigation for some users.</p>
+		<h3 id="spelling">Has the spelling for all content been checked?</h3>
+		<p>Check all written content for spelling and grammatical errors. There
+		are a few online apps that are available</p>
+		<ul>
+			<li><a href="http://www.spellchecker.net/spellcheck/">Online spellchecker app</a></li>
+			<li><a href="https://typosaur.us/">Typosaur.us</a></li>
+		</ul>
+		<h3 id="punctuation">Is punctuation and capitalisation consistent across pages?</h3>
+		<p>Check content for consistency across all pages. Written style and
+		voice should remain consistent as well as capitalisation of any specific
+		terms or proper nouns used on the site.</p>
+		<h3 id="filler-text">Have we made sure there is no filler text on any of the pages?</h3>
+		<p>Go through each page of the site and confirm that no filler or
+		'Lorem Ipsum' text exists anywhere, especially watch out for footer
+		text, image descriptions or text designed to appear on user specified 
+		actions such as help text that appears on rollover.</p>
+		<h3 id="filler-img">Have we made sure there are no filler images?</h3>
+		<p>Many backend and frontend developers will use standardised images 
+		such the <a href="http://dummyimage.com/">Dynamic Dummy Image Generator</a> 
+		when they are coding up designs. Go through each of the pages and make 
+		sure that the images in place are ones specified by the client for 
+		that position.</p>
+		<h3 id="inline">Have we made sure there no inline css or javascript?</h3>
+		<p>Make sure that CSS and javascript are not attached explicity to the
+		markup and elements of the page. Firefox has an extension that allows 
+		us to easily check this per page - 
+		<a href="https://addons.mozilla.org/en-US/firefox/addon/9640">Inline Code Finder</a>.
+		There is also a 
+		<a href="https://chrome.google.com/extensions/detail/lfllandeffkmadbndfckhdbkekdfahom/">Chrome extension</a> 
+		which does the same thing.</p>
+		<h3 id="validator">Is the markup and css valid? Or is the reason it's invalid acceptable?</h3>
+		<p>Run the pages through the <a href="http://validator.w3.org/">W3C validtor</a> or 
+		install the <a href="https://addons.mozilla.org/en-US/firefox/addon/249">Firefox validator add-on</a> 
+		to test the page code and css of the site. Be aware however that there 
+		may be valid reasons for markup and css to fail an automated checker. 
+		For example:
+		<ul>
+			<li>WAI-ARIA attributes will not validate on the majority 
+			of X/HTML validators but it is recommended that ARIA is used 
+			despite this for the increased usability it gives screenreaders.</li>
+			<li>Browser specific css properties will cause the css to not 
+			validate but it's generally better to use them anyway for designs 
+			that require them.</li>
+		</ul>
+		</p>
+		<h3 id="print">Is there a print css file?</h3>
+		<p>It's important to provide users with a print version of 
+		important content that strips out any extraneous content and design. 
+		Make sure a print stylesheet exists on pages that users are more 
+		likely to print.
+		</p>
+		<p>
+			<code>
+				&lt;link rel="stylesheet" type="text/css" media="print" href="print.css" /&gt;
+			</code>
+		</p>
+    	<h3 id="plugins">Have we tested any required plugins in a browser without plugins installed?</h3>
+		<p>There should be alternative or fallback content for anything content that requires plugins or at the 
+		very least instructions on what the user has to do in order to access
+		the plugin required content.</p>
+		<h3 id="formatting">Have we made sure no content has been copied in with extra formatting?</h3>
+		<p>Pasting from word docs for example adds garbage xml code to the markup. It doesn't
+		always show up from a content or design perspective but it can break 
+		the site in unexpected and unusual ways. Avoid it by first pasting any
+		content we've copied from word into a plain .txt file such as that 
+		created bu 'notepad' before copying it from the text file and pasting 
+		it into the site. Make sure other content hasn't been copied in from other 
+		sources with associated HTML elements or formatting.</p>
+		<h3 id="charset">Is all content rendered as appropriate charset?</h3>
+		<p>Often a byproduct of pasting content from word is that strange 
+		characters sometimes appear in the content. We may get these 
+		from other sources as well so it is important to always check the 
+		content is encoded to the appropriate characterset. It's fairly 
+		easy to find more indepth 
+		<a href="http://www.w3.org/International/getting-started/characters">
+			information on charactersets
+		</a>. In general sites and content should be saved and 
+		encoded to the UTF-8 charset.</p>
+		<h3 id="extensions">Have images been saved as appropriate extensions and quality?</h3>
+		<p>Make sure any background images or images used in content are of the 
+		appropriate filetype and size. Filesizes should be kept as small as 
+		possible for ease of user bandwidth and server load.</p>
+		<h3 id="links">Are all the links valid and go to correct locations?</h3>
+		<p>Run the page through the <a href="http://validator.w3.org/checklink">
+			W3C link validator
+		</a> or through a <a href="http://www.dead-links.com/">
+			site-wide linkchecker
+			</a>; remembering that the site-wide versions can often hammer the 
+			hosting server.  
+		</p>
+		<h3 id="downloads">Have we made sure any downloadable files have been uploaded to the server?</h3>
+		<p>If the site has any files that users can download, make sure that 
+		the appropriate files are uploaded to the correct locations and named 
+		appropriately.</p>
+		<h3 id="page404">Has a 404 page been created?</h3>
+		<p>Creating a custom 404 page helps usability enormously. We can 
+		assign the location of a custom 404 page with the following line 
+		in an .htaccess file on the server:</p>
+		<p><code>
+			ErrorDocument 404 http://www.yoursite.com/custom_page.html
+		</code></p>
+		<h3 id="page500">Has a 500 page been created?</h3>
+		<p>Users should never be exposed to server or internal error 
+		messages so a custom page for server errors should be generated.
+		We can assign the location of a custom 500 page with the following 
+		line in an .htaccess file on the server:</p>
+		<p><code>
+			ErrorDocument 500 http://www.yoursite.com/custom_page.html
+		</code></p>
+		<h3 id="favicon">Has a favicon been created?</h3>
+		<p>A Favicon is a little custom icon that appears next to a 
+		website's URL in the address bar of a web browser. Create a 16*16px 
+		.ico file (modern browsers can handle .gif and .png as well) called 
+		favicon and plac it in the root directory of the site.</p>
+		<h3 id="alt">Do all images have proper alt text atributes?</h3>
+		<p>Any image that isn't a spacer should have a descriptive alt text 
+		for screenreaders. We can also use the WAI-ARIA role 'presentation' 
+		to indicate to screenreaders that the should ignore that element. For 
+		example:
+		</p>
+		<p><code>
+			&lt;div role="presentation" class="clear" &gt;&lt;/div&gt;
+			</code></p>
+		<h3 id="titles">Do all links have descriptive text and proper title attributes?</h3>
+		<p>Screenreader users often get a list of all links on a page so they 
+		can navigate sites quickly rather than have to listen through all the 
+		content to find what they want. When they are searching through a 
+		list of links titles and descriptions like 'click here' and 'read more' 
+		are not very useful and can be very confusing. Make sure that all links 
+		on a page are described properly for understanding where they go when 
+		read away from their surrounding context.</p>
+		<h3 id="web-font">Does all text fall back to being rendered in a web font?</h3>
+		<p>If possible, all text on a page should be marked up as text in 
+		a <a href="http://en.wikipedia.org/wiki/Core_fonts_for_the_Web">
+			web safe font
+		</a>. If the design utilises a custom font make sure we have the appropriate licensing for it 
+		and that it downloads correctly for the user.</p>
+		<h3 id="heading">Have we made sure there is only one level one heading (h1) on each page?</h3>
+		<p>Mostly useful for SEO purposes; it's important that each page 
+		only has a single h1 element, additionally subsequent headings should 
+		follow the correct order (h2 should come before h3). This recommendation 
+		can be ignored if we're using HTML5 which takes into account heading 
+		number and how many levels of <code>section</code> surround it.</p>
+		<h3 id="micro-content">Has micro-content been created for all user interaction messages?</h3>
+		<p>Make sure that all small pieces of content that might not have 
+		been recognised during IA have been approved and spellchecked. The 
+		following situations should be considered as a minimum to check for:</p>
+		<ul>
+			<li>Error messages</li>
+			<li>Welcome messages</li>
+			<li>Login messages</li>
+			<li>Logout messages</li>
+			<li>Zero results search messages</li>
+			<li>Action success messages</li>
+			<li>Action confirmation messages</li>
+			<li>Action failure messages</li>
+		</ul>
+		<h3 id="minimised">Are css and javascript files minimised?</h3>
+		<p>Make sure css files and javascript files have been run through a production build script that provides a minimised version of both.</p>
+		<h3 id="analytics">Have we added appropriate page analytics?</h3>
+		<p>Make sure any required <a href="http://www.google.com/analytics/">
+			google analytics
+		</a> or any other javascript tracking has been added to the pages.</p>
+		<h3 id="debugging">Have we removed any debug messages?</h3>
+		<p>Any javascript console.log or alert messages should be removed 
+		from the code.</p>
+		<h3 id="design">Does the site match the design?</h3>
+		<p>
+			<span class="warning">This is a browser dependent issue and needs to 
+			be checked across the browsers listed in our contract or from a 
+			 graded browser support list.</span>
+		</p>
+		<h3 id="resize">Have we tested the content at expanded text size?</h3>
+		<p>
+			<span class="warning">This is a browser dependent issue and needs to 
+			be checked across the browsers listed in our contract or from a 
+			 graded browser support list.</span>
+		</p>
+		<h3 id="resolution">Have we tested the pages at the most common screen resolutions?</h3>
+		<p>We can use the browser developer toolbar to resize the browser to the most 
+		common screen resolutions. Try to check in at least 800*600, 1024*768, 1280*1024 and  
+		1600*1200.</p>
+		<p>
+			<span class="warning">This is a browser dependent issue and needs to 
+			be checked across the browsers listed in our contract or from a 
+		 	graded browser support list.</span>
+		</p>
+		<h3 id="content-quantity">Have we varied content quantity in content panes to make sure the design fidelity is maintained?</h3>
+		<p>Different amounts of text in boxes of a fixed height or width may break the 
+		layout of the page, so test varied content amount in any element that will 
+		hold text.</p>
+		<p>
+			<span class="warning">This is a browser dependent issue and needs to 
+			be checked across the browsers listed in our contract or from a 
+			graded browser support list.</span>
+		</p>
+		<h3 id="validation">Have we tested javascript form validation?</h3>
+		<p>Check any forms for client-side validation. Some, but not all, things to 
+		check for include:</p>
+		<ul>
+			<li>Email confirmation boxes match.</li>
+			<li>Password confirmation boxes match.</li>
+			<li>Required fields are filled out.</li>
+		</ul>
+		<p>Client-side javascript validation should be very 'soft' (as in it shouldn't 
+		do any complex validation of data - this should be resereved for server-side 
+		validation).</p>
+		<p>
+			<span class="warning">This is a browser dependent issue and needs to 
+			be checked across the browsers listed in our contract or from  
+			graded browser support list.</span>
+		</p>
+		<h3 id="functionality">Have we tested other javascript functionality?</h3>
+		<p>Javascript functionality such as tabs, image carousels, accordions, 
+		datepickers, show/hide scripts and other such usability additions need to 
+		checked on eahc page to make sure they for a variety of content.</p>
+		<p>
+			<span class="warning">This is a browser dependent issue and needs to 
+			be checked across the browsers listed in our contract or from a 
+			graded browser support list.</span>
+		</p>
+		<h3 id="progressive">Does the site functionality work with javascript turned off?</h3>
+		<p>Any additional javascript usability functionality needs to provide alternative 
+		and equivalent functionality for users with javascript turned off. This doesn't mean 
+		the experience has to be the same, just that there has to be some way for everyone 
+		to access the same content. For example an image carousel with javascript turned 
+		off may just load a single image and then provide a link through to a seperate 
+		page that allows access to any extra images.</p>
+		
+		<h3 id="media">Confirm media plays (audio, video)</h3>
+		<p>Test real content, especially in cases where files are uploaded in order to make sure correct filepaths and loading of media occurs.</p>
+		<h3 id="canonical">Utilise canonical urls where appropriate</h3>
+		<p>In instances of multiple pages on the site having duplicate content, make sure that there is a single, master page that can be designated
+		as 'canonical' for the purposes of search engines. Read more about canonical usage as <a href="https://moz.com/learn/seo/canonicalization">Moz</a> or <a href="https://support.google.com/webmasters/answer/139066?hl=en">Goggle support</a></p>
+		<h3 id="responsive">Confirm responsive breakpoints and usability</h3>
+		<p>Ideally the site utilised a <a href="https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/">mobile first design/development process</a> and we have a clear matrix of mobile/browser versions to test against.</p>
+		<h3 id="performance">Run automated performance tests on primary pages</h3>
+		<p>There are a number of automated tools that can be used to help target specific issues that of worth focusing on.</p>
+		<p>Some tools include:</p>
+		<ul>
+			<li><a href="https://developers.google.com/web/tools/lighthouse/">Google Lighthouse</a> [General overview]</li>
+			<li><a href="https://search.google.com/structured-data/testing-tool/u/0/">Google structured data validation</a> [Schema validation]</li>
+			<li><a href="https://observatory.mozilla.org/">Observatory</a> by Mozilla [Security]</li>
+			<li><a href="https://sizzy.co/">Sizzy</a> [Responsive design]</li>
+			<li><a href="https://achecker.ca/checker/index.php">AChecker</a> [Accessibility]</li>
+			<li><a href="https://tenon.io/">Tenon</a> [Accessibility]</li>
+		</ul>
+		<h3 id="elements">Confirm all standard HTML5 elements have appropriate stylings</h3>
+		<p>It's a good idea to have a standard content page that contains instances of every possible element that we can use to validate designs and functionality. Check each element has been considered within the design and has an appropriate treatment.</p>
+		<h3 id="sharing">Implement social media meta tags (twitter cards, open graph) for shareable content</h3>
+		<p>Include <a href="https://yoast.com/advanced-technical-seo-social-image-ogimage-tags/">appropriate meta tags</a> within the head of the page to facilitate sharing across social sites.</p>
+		<h3 id="schema">Confirm appropriate entities (recipes, events, people, etc) have been marked up with associated schema.org ontologies</h3>
+		<p>Certain schema entities are currently actively used by Google and others to improve search results and others are in the process of being implemented into other pieces of functionality. It's worth implementing schema.org entities even on schemas that aren't currently implemented in search functionlity as it's likely they will be used in the future and they help search engines clearly identify our content.</p>
+		<h3 id="social-accounts">Confirm Client owns and publishes to associated social media accounts</h3>
+		<p>If we have icons on the site that are intended to point to company assets, make sure the company< owns the account in question and actively publishes to it and checks it.</p>
+		<h3 id="legal">Have we created legal and privacy pages and do they contain correct content?</h3>
+		<p>Pages that contain important legal and privacy related information should be created and kept up-to-date.</p>
+
+		
+		<h2>Server Dependent Question Details</h2>
+		
+		<h3 id="accounts">Do we have required accounts details?</h3>
+		<p>Have we confirmed what we need to be able to log in and upload to the 
+		host server? Have firewalls been configured? Do we need to set up a secure 
+		tunnel before we can ssh in? Do we have accounts, passwords and appropriate permissions for the actual services we need to use to deploy (SFTP, ssh, source control)</p>
+		<h3 id="database">Do we have database details?</h3>
+		<p>Make sure we have database username and password and any extra details we 
+		need to set up and utilise the live database; including who is responsible for 
+		it, how it can be accessed by developers and any extra issues that may be 
+		involved.</p>
+		<h3 id="backup-live">Have we made a backup of the live site and the live database?</h3>
+		<p>Zip up the live site and associated database and data in a safe 
+		location, formally and named on proper naming conventions.</p>
+		<h3 id="db-schema">Do we have a sql file for generating any databases and content?</h3>
+		<p>Make a .sql file from phpmyadmin or from the mysql command line.</p>
+		<h3 id="hosting">Do we know the DNS and hosting provider have details for a contact for each?</h3>
+		<p>Is hosting being managed internally or externally? Has it been configured and are we able to access the required infrastrcuture? Do we have an account and permissions to create other infrastructure or configure domain redirects if required?</p>
+		<h3 id="url">Do we know the exact URL the site is to exist on?</h3>
+		<p>Do we know if mutiple urls need to be configured? Has the URL been purchased? Do we know account details for how to access the domain registrar and when and how the domain may need to be renewed?</p>
+		<h3 id="cors">Have we enabled CORS if required for cross domain frontend queries?</h3>
+		<p>If we have an API that is designed to be accessed by javascript on a separate domain (including subdomain) we need to <a href="https://enable-cors.org/">enable CORS</a> to allow frontend code to access the required data.</p>
+		<h3 id="monitoring">Have we enabled monitoring on application and infrastructure?</h3>
+		<p>Make sure there is appropriate monitoring to determine issues in advance for each layer. There's no point only monitoring at a server layer if our application is serving endless 500 errors to anyone trying to access it. Make sure any automated alerts are being sent to someone who can action them.</p>
+		<h3 id="deployment">Do we have an automated deployment pipeline or understand the steps needed to move the application into Production?</h3>
+		<p>We should endeavour to automate as much of deployment as possible so we can minimise likely human error. Do we know how our pipeline works? What needs to be configured? Who is responsible for activating the build?</p>
+		<h3 id="rollback">Do we know how to easily and gracefully rollback to a previous depoyment?</h3>
+		<p>If a critical error occurs in deployment we need to be able to easily fall back to the previous version that worked. If possible this should be part of our automated delivery pipeline.</p>
+		<h3 id="migration">Do we know how to migrate the DB and any DB changes?</h3>
+		<p>Do we have an automated way to deply changes or updates to our DB to minimise human error and to ensure that nothing is missed?</p>
+		<h3 id="caching">Do we know what caching we need to enable?</h3>
+		<p>Do we have a clear picture of caching layers used by application, database and infrastrcuture? Do we know how to configure them and how they might affect testing and updates?</p>
+		<h3 id="rss">Have we published an RSS feed? Has it been tested in an RSS Reader?</h3>
+		<p>Certain content suits delivery via RSS andshould be supplied for those people who wish to subscribe. Make sure the output of the RSS feed is correct by testing it in a third party RSS reader as content is published.</p>
+		<h3 id="updates">Do we have a plan for how we will handle future updates to plugins, modules, core frameworks or CMS?</h3>
+		<p>If we are using third party code we need to have a plan for being able to update it as required. This includes potential critical security updates. We also need to make sure we sign up for any available notifications of updates from those third parties so we know the roadmap of their releases and can plan accordingly.</p>
+		<h3 id="ownership">Does the client have ownership of the accounts used for third party integrations and licensing? Have we confirmed
+		 we're using those accounts and associated secrets/keys in our calls?</h3>
+		<p>Make sure that we aren't using test accounts for third parties and APIs in production. Make sure that we have licensing in place that covers our expected usage of APIs or paid services.</p>
+		<h3 id="privacy">Have we made sure there are no keys, secrets, API credentials, passwords, usernames or similar commited to our source control?</h3>
+		<p>Confirm that we are storing account and password information used to access services and APIs appropriately and accessing it only through variables in configuration files - never hard coded.</p>
+		<h3 id="lifecycle">Have we tested user creation lifecycle? As both an Admin as a user signing up?></h3>
+		<p>Make sure we run basic functionality tests against high value tasks. Create a user as an Administrator in the system to confirm it works. Complete the same as a user of the system to make sure that all aprts of the user journey function. This includes confirmation and change password journeys.</p>
+		<h3 id="email">Have we confirmed emails are being sent by the system appropriately?</h3>
+		<p>Make sure we are receiving confirmation or automated emails from the application. This includes both user journey emails that are part of the customer lifecycle as well as notification emails that may be sent by monitoring or automated processes.</p>
+
+		<h3 id="debug-server">Have we removed all debug messages?</h3>
+		<p>Make sure we have removed any print or echo statements from server scripts and 
+		turned off any debug variables.</p>
+		<h3 id="logging">Have we set up logging of critical errors?</h3>
+		<p>Add logging for any raised errors that need to be captured. Make sure 
+		none of the critical error messages are raised to the client.</p>
+		<h3 id="dependencies">Do we have any dependencies or classes that need to be installed on the server?</h3>
+		<p>Make sure that any extra functionality that we need is installed on the 
+		live site (image manipulation, pdf makers, batabase servers, etc, etc).</p>
+		<h3 id="versions">Are we using appropriate versions of all the technology we have used?</h3>
+		<p>Make sure we've been developing to the correct technology versions. Nothing 
+		like developing locally in PHP5 and discovering the live server only has 
+		PHP4, for example.</p>
+		<h3 id="external">Do we have access to any third party APIs or external dependencies that we use?</h3>
+		<p>Make sure any application keys we use to access external APIs are set up with 
+		a live version rather than a developer one. Any live firewalls may need to be 
+		configured to allow access to third parties.</p>
+		<h3 id="test-data">Have we made sure the database doesn't have any test data in it?</h3>
+		<p>Try to start with a totally clean database if possible, otherwise make sure 
+		that any test data in it has been deleted before the client sees it.</p>
+		<h3 id="permissions">Have we set appropriate permissions on any directories that users can upload to?</h3>
+		<p>Make sure directories that are supposed to allow file uploads can actually 
+		write the files to the system. See <a href="https://superuser.com/questions/581194/setting-correct-permissions-for-uploading-files">this answer on SuperUser Stackexchange</a></p>
+		<h3 id="file-security">Have we confirmed that users can't upload malicious files?</h3>
+		<p>Check for explicit mime type rather than relying on file extensions before 
+		allowing users to upload files to the server.</p>
+		<h3 id="rename-files">Have we made sure that uploaded files are renamed to prevent overwriting?</h3>
+		<p>Rename any user uploaded files to remove non-alphanumeric characters, spaces 
+		and then rename the file with the current datetime before writing it to disk 
+		to prevent two files with the same name from being overwritten.</p>
+		<h3 id="gzip">Are css and javascript files gzipped?</h3>
+		<p>Compress any client served files if possible.</p>
+		<h3 id="server-validation">Have we tested any forms for server validation?</h3>
+		<p>Server validation should be more robust than client-side validation and 
+		we may need to test complex business rules within the form.</p>
+		<h3 id="clean">Have we cleaned all data received from the user?</h3>
+		<p>Never trust any data that could have come from the client.</p>
+		
+		<h3 id="email-spam">Are we certain any mail functionality is protected from spammers?</h3>
+		<p>If there is any 'send to friend' or 'contact us' email functionality in the site, make sure that
+		the sending of email is protected from hacking attempts such as adding extra addresses through the form 
+		or writing a script to send multiple emails very quickly.</p>
+		<h3 id="spam">Have we made sure that any mails from the server are not being sent to spam folders?</h3>
+		<p>Confirm the correct headers are being sent on any automated emails so that they are not regulated to the
+		receiver's spam folder.</p>
+		<h3 id="redirects">Have we set up any appropriate 300 redirects?</h3>
+		<p>Ensure any old links redirect to new pages.</p>
+		<h3 id="server-analytics">Have we set up any required server analytics?</h3>
+		<p>Configured DB logs, web and server traffic tracking and any extra packages needed to monitor the server and database.</p>
+		<h3 id="robots">Has a robots.txt file been generated?</h3>
+		<p>Place a robots.txt file in the root directory indicating which areas of the site crawlers should ignore</p>
+		<h3 id="stress">Have we run load and stress tests?</h3>
+		<p>Run a server stress test such as <a href="http://httpd.apache.org/test/flood/">flood</a> to check the server performs under load.</p>
+		<h3 id="slow">Have we checked the slow query log for the database?</h3>
+		<p>Check the slow query log for any queries that can be cleaned up to improve performace and to prevent massive site slowdown.</p>
+		<h3 id="private">Are private urls appropriately protected?</h3>
+		<p>Make sure any url that is supposed to be private requires login or redirects 
+		to somewhere else.</p>
+		<h3 id="user-creation">Have any required administrators or users been created?</h3>
+		<p>Any database additions that need to be added so the client can login and 
+		view/use administration or cms functionality should be created.</p>
+		<h3 id="ssl">Have we purchased and installed any required SSL certificates?</h3>
+		<p>Ensure any required security is protected by https and an associated SSL certificate. Test the validity of installed SSL with <a href="https://www.digicert.com/help/">a verification tool</a></p>
+		<h3 id="backup">Is there a backup procedure in place?</h3>
+		<p>Make sure periodic, automatic backups of the server and database work correctly.</p>
+		<h3 id="restore">Have we successfully restored from backup? Of both the application and the database?</h3>
+		<p>Make sure we have successfully restored the entire system from an existing backup to confirm the backup and 
+		restore procedure work.</p>
+		<h4 id="really">Really?</h4>
+		<p>No, really. Make sure this has been confirmed. We do not want to see a 
+		<a href="http://superuser.com/questions/82036/recovering-a-lost-website-with-no-backup">situation like this</a>.</p>
+	</body>
+	
+</html>
