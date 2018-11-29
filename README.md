@@ -288,7 +288,7 @@ Some tools include:
 
 ### Confirm all standard HTML5 elements have appropriate stylings
 
-It's a good idea to have a standard content page that contains instances of every possible element that we can use to validate designs and functionality. Check each element has been considered within the design and has an appropriate treatment. [This is agood example page detailing HTML5 elements](https://github.com/cbracco/html5-test-page), and [here is a hosted version](content.html)<a>.</a>
+It's a good idea to have a standard content page that contains instances of every possible element that we can use to validate designs and functionality. Check each element has been considered within the design and has an appropriate treatment. [This is agood example page detailing HTML5 elements](https://github.com/cbracco/html5-test-page), and [here is a hosted version](https://www.webdevelopmentchecklist.com/content.html)<a>.</a>
 
 <a>
 
